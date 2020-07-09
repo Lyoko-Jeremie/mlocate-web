@@ -37,7 +37,7 @@ def index():
             cs = "-i "
         else:
             cs = ""
-        command = 'mlocate ' + cs + quote(query)
+        command = 'locate ' + cs + quote(query)
         command = command.encode('utf-8')
         with Popen(command, shell=True, stdout=PIPE) as proc:
             outs = proc.stdout.read(MAX_RESULT_BYTES)
